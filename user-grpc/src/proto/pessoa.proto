@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package pessoa;
+
+service PessoaService {
+  rpc FindOne (PessoaById) returns (Pessoa) {}
+}
+
+message PessoaById {
+  string cpf = 1;
+}
+
+message Pessoa {
+  string cpf = 1;
+  string name = 2;
+  int32 idAddress = 3;
+  int32 idContact = 4;
+}
